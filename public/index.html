@@ -25,13 +25,16 @@
     <script>
         //XMLHttpRequest 객체를 생성합니다
         var req = new XMLHttpRequest();
-        req.open('GET', '/data.html', false);
-
-        //Ajax를 수행합니다.
+        req.onreadystatechange = function (event) {
+            if (req.readyState == 4) {
+                if (req.status == 200) {
+                    document.body.innerHTML += req.responseText
+                }
+            };
+        };
+        req.open('GET', '/data.html', true);
+        
         req.send();
-
-        //출력합니다.
-        alert(req.responseText)
     </script>
 </body>
 </html>
