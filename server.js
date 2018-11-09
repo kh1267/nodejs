@@ -51,6 +51,7 @@ app.all('/data.xml', function (req, res) {
         output += '</product>';
     })
     output += '</products>';
+    res.type('text/xml')
     res.send(output)
 })
 //라우트합니다.
