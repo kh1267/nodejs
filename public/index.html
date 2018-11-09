@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8" />
     <title>Data Process</title>
-    <script>
+    <!--<script>
         window.onload = function () {
             document.getElementById('get').onclick = function () {
                 var req = new XMLHttpRequest();
@@ -57,10 +57,27 @@
                 }
             }
         };
+    </script>-->
+    <script src="./jquery-3.3.1.js"></script>
+    <script>
+        //jquery 로 XMLHttp
+        $(function () {
+            $.ajax({
+                url: '/parameter',
+                type: 'GET',
+                data: {
+                    name: 'test',
+                    price: 'test'
+                },
+                success: function (data) {
+                    $('body').append(data)
+                }
+            })
+        })
     </script>
 </head>
 <body>
-    <button id="get">GET</button>
+    <!--<button id="get">GET</button>
     <button id="post">POST</button>
     <button id="put">PUT</button>
     <button id="delete">DELETE</button>
@@ -68,7 +85,7 @@
     <input id="name" />
     <input id="price" />
     <h1>output</h1>
-    <textarea id="output" disabled="disabled" cols="40" rows="5"></textarea>
+    <textarea id="output" disabled="disabled" cols="40" rows="5"></textarea>-->
 
     <!--<script src="./jquery-3.3.1.js"></script>-->
     <!--<script>
