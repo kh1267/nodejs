@@ -4,9 +4,10 @@
 <head>
     <meta charset="utf-8" />
     <title>Data Process</title>
+
 </head>
 <body>
-    <form action="/products" method="get">
+    <!--<form action="/products" method="get">
         <fieldset>
             <legend>get</legend>
             <input type="submit"/>
@@ -20,6 +21,17 @@
             <input name="price" />
             <input type="submit" />
         </fieldset>
-    </form>
+    </form>-->
+    <script>
+        //XMLHttpRequest 객체를 생성합니다
+        var req = new XMLHttpRequest();
+        req.open('GET', '/data.html', false);
+
+        //Ajax를 수행합니다.
+        req.send();
+
+        //출력합니다.
+        alert(req.responseText)
+    </script>
 </body>
 </html>
